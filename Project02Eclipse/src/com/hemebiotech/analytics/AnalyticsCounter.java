@@ -8,13 +8,13 @@ public class AnalyticsCounter {
 	private static int headacheCount = 0; // initialize to 0
 	private static int rashCount = 0; // initialize to 0
 	private static int pupilCount = 0; // initialize to 0
+	private static String line = null; // initialize to null
 
 	public static void main(String args[]) throws Exception {
 		// first get input
 		BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
-		String line = reader.readLine();
 
-		while (line != null) {
+		while ((line = reader.readLine()) != null) {
 			System.out.println("symptom from file: " + line);
 			if (line.equals("headache")) {
 				headacheCount++;
