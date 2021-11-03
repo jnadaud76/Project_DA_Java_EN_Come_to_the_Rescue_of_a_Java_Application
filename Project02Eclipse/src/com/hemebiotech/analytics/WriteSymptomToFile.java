@@ -3,7 +3,6 @@ package com.hemebiotech.analytics;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
@@ -11,7 +10,7 @@ import java.util.TreeMap;
  */
 public class WriteSymptomToFile implements ISymptomWriter {
 
-	private TreeMap<String, Integer> fileMap;
+	private Map<String, Integer> fileMap;
 
 	/**
 	 * WriteSymptomToFile constructor
@@ -23,7 +22,7 @@ public class WriteSymptomToFile implements ISymptomWriter {
 	 *                Value parameter in Map represent counter.
 	 */
 
-	public WriteSymptomToFile(TreeMap<String, Integer> fileMap) {
+	public WriteSymptomToFile(Map<String, Integer> fileMap) {
 		this.fileMap = fileMap;
 	}
 
