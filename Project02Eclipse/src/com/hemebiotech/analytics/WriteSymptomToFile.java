@@ -36,7 +36,7 @@ public class WriteSymptomToFile implements ISymptomWriter {
 		try {
 			FileWriter writer = new FileWriter("result.out");
 			for (Map.Entry<String, Integer> e : fileMap.entrySet()) {
-				writer.write(e.getKey() + " : " + e.getValue());
+				writer.write(e.getKey() + " : " + e.getValue() + "\r\n");
 			}
 			writer.close();
 		} catch (IOException e) {

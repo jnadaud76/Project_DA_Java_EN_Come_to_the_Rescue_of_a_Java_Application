@@ -9,6 +9,5 @@ public class AnalyticsCounter {
 		ISymptomCounter counter = new CountSymptomFromList(reader.getSymptoms());
 		ISymptomWriter writer = new WriteSymptomToFile(counter.countSymptoms());
 		writer.writeSymptoms();
-
 	}
 }
