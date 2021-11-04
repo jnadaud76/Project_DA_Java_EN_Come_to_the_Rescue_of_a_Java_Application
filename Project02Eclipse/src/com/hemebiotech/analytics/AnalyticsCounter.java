@@ -1,5 +1,12 @@
 package com.hemebiotech.analytics;
 
+import com.hemebiotech.analytics.count.CountSymptomFromList;
+import com.hemebiotech.analytics.count.ISymptomCounter;
+import com.hemebiotech.analytics.read.ISymptomReader;
+import com.hemebiotech.analytics.read.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.write.ISymptomWriter;
+import com.hemebiotech.analytics.write.WriteSymptomToFile;
+
 /**
  * <b>Analytics Counter</b>
  * <p>
