@@ -9,7 +9,11 @@ import java.util.Map;
  *
  */
 public class WriteSymptomToFile implements ISymptomWriter {
-
+	/**
+	 * A map of Symptoms.
+	 * 
+	 * @see WriteSymptomToFile#WriteSymptomToFile(Map)
+	 */
 	private Map<String, Integer> fileMap;
 
 	/**
@@ -20,6 +24,8 @@ public class WriteSymptomToFile implements ISymptomWriter {
 	 *                associated with a counter indicating the number of times it
 	 *                appears in the map. Key parameter in Map represent Symptom.
 	 *                Value parameter in Map represent counter.
+	 * 
+	 * @see WriteSymptomToFile#fileMap
 	 */
 
 	public WriteSymptomToFile(Map<String, Integer> fileMap) {
@@ -30,7 +36,6 @@ public class WriteSymptomToFile implements ISymptomWriter {
 	 * Write all elements contain in fileMap in a file.txt. Return nothing.
 	 * 
 	 */
-
 	@Override
 	public void writeSymptoms() {
 		try {
@@ -43,5 +48,4 @@ public class WriteSymptomToFile implements ISymptomWriter {
 			e.printStackTrace();
 		}
 	}
-
 }
