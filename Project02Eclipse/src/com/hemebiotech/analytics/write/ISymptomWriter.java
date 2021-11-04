@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.write;
 
 /**
  * Anything that will write symptom data from a source in something (file, data

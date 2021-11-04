@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.count;
 
 import java.util.List;
 import java.util.Map;
@@ -9,7 +9,11 @@ import java.util.TreeMap;
  *
  */
 public class CountSymptomFromList implements ISymptomCounter {
-
+	/**
+	 * listing of Symptoms.
+	 * 
+	 * @see CountSymptomFromList#CountSymptomFromList(List)
+	 */
 	private List<String> fileList;
 
 	/**
@@ -17,6 +21,8 @@ public class CountSymptomFromList implements ISymptomCounter {
 	 * 
 	 * @param fileList a raw listing of all Symptoms obtained from a file,
 	 *                 duplicates are possible/probable
+	 * 
+	 * @see CountSymptomFromList#fileList
 	 */
 	public CountSymptomFromList(List<String> fileList) {
 		this.fileList = fileList;

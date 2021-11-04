@@ -1,17 +1,20 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.write;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
  *
  */
 public class WriteSymptomToFile implements ISymptomWriter {
-
-	private TreeMap<String, Integer> fileMap;
+	/**
+	 * A map of Symptoms.
+	 * 
+	 * @see WriteSymptomToFile#WriteSymptomToFile(Map)
+	 */
+	private Map<String, Integer> fileMap;
 
 	/**
 	 * WriteSymptomToFile constructor
@@ -21,9 +24,11 @@ public class WriteSymptomToFile implements ISymptomWriter {
 	 *                associated with a counter indicating the number of times it
 	 *                appears in the map. Key parameter in Map represent Symptom.
 	 *                Value parameter in Map represent counter.
+	 * 
+	 * @see WriteSymptomToFile#fileMap
 	 */
 
-	public WriteSymptomToFile(TreeMap<String, Integer> fileMap) {
+	public WriteSymptomToFile(Map<String, Integer> fileMap) {
 		this.fileMap = fileMap;
 	}
 
@@ -31,18 +36,16 @@ public class WriteSymptomToFile implements ISymptomWriter {
 	 * Write all elements contain in fileMap in a file.txt. Return nothing.
 	 * 
 	 */
-
 	@Override
 	public void writeSymptoms() {
 		try {
 			FileWriter writer = new FileWriter("result.out");
 			for (Map.Entry<String, Integer> e : fileMap.entrySet()) {
-				writer.write(e.getKey() + " : " + e.getValue());
+				writer.write(e.getKey() + " : " + e.getValue() + "\r\n");
 			}
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 }
