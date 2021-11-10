@@ -10,22 +10,11 @@ import java.util.TreeMap;
  */
 public class CountSymptomFromList implements ISymptomCounter {
 	/**
-	 * listing of Symptoms.
-	 * 
-	 * @see CountSymptomFromList#CountSymptomFromList(List)
-	 */
-	private List<String> fileList;
-
-	/**
 	 * CountSymptomFromList constructor
 	 * 
-	 * @param fileList a raw listing of all Symptoms obtained from a file,
-	 *                 duplicates are possible/probable
-	 * 
-	 * @see CountSymptomFromList#fileList
 	 */
-	public CountSymptomFromList(List<String> fileList) {
-		this.fileList = fileList;
+	public CountSymptomFromList() {
+
 	}
 
 	/**
@@ -36,9 +25,11 @@ public class CountSymptomFromList implements ISymptomCounter {
 	 *         a counter indicating the number of times it appears in the map. Key
 	 *         parameter in Map represent Symptom. Value parameter in Map represent
 	 *         counter.
+	 * @param fileList a raw listing of all Symptoms obtained from a file,
+	 *                 duplicates are possible/probable
 	 */
 	@Override
-	public Map<String, Integer> countSymptoms() {
+	public Map<String, Integer> countSymptoms(List<String> fileList) {
 		Map<String, Integer> result = new TreeMap<String, Integer>();
 
 		if (fileList != null) {

@@ -10,14 +10,23 @@ import java.util.Map;
  */
 public class WriteSymptomToFile implements ISymptomWriter {
 	/**
-	 * A map of Symptoms.
-	 * 
-	 * @see WriteSymptomToFile#WriteSymptomToFile(Map)
+	 * file path to data source.
+	 *
 	 */
-	private Map<String, Integer> fileMap;
+	private String filePath;
 
 	/**
 	 * WriteSymptomToFile constructor
+	 * 
+	 * @param filePath the path to the file where the data will be written.
+	 * 
+	 */
+	public WriteSymptomToFile(String filePath) {
+		this.filePath = filePath;
+	}
+
+	/**
+	 * Write all elements contain in fileMap in a output file. Return nothing.
 	 * 
 	 * @param fileMap a map of all Symptoms obtained from a List with no duplication
 	 *                classify by alphabetical order. Each symptom will be
@@ -25,21 +34,11 @@ public class WriteSymptomToFile implements ISymptomWriter {
 	 *                appears in the map. Key parameter in Map represent Symptom.
 	 *                Value parameter in Map represent counter.
 	 * 
-	 * @see WriteSymptomToFile#fileMap
-	 */
-
-	public WriteSymptomToFile(Map<String, Integer> fileMap) {
-		this.fileMap = fileMap;
-	}
-
-	/**
-	 * Write all elements contain in fileMap in a file.txt. Return nothing.
-	 * 
 	 */
 	@Override
-	public void writeSymptoms() {
+	public void writeSymptoms(Map<String, Integer> fileMap) {
 		try {
-			FileWriter writer = new FileWriter("result.out");
+			FileWriter writer = new FileWriter(filePath);
 			for (Map.Entry<String, Integer> e : fileMap.entrySet()) {
 				writer.write(e.getKey() + " : " + e.getValue() + "\r\n");
 			}

@@ -14,14 +14,14 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	/**
 	 * file path to data source.
 	 * 
-	 * @see ReadSymptomDataFromFile#ReadSymptomDataFromFile(String)
+	 * 
 	 */
 	private String filePath;
 
 	/**
 	 * ReadSymptomDataFromFile constructor.
 	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it,
+	 * @param filePath a full or partial path to file with symptom strings in it,
 	 *                 one per line
 	 * 
 	 * @see ReadSymptomDataFromFile#filePath
