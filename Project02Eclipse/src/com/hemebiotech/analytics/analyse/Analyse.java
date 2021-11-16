@@ -57,21 +57,29 @@ public class Analyse {
 
 	/**
 	 * Count and ordered the list of Symptoms
-	 *
+	 * 
+	 * @param listNotCounted a raw listing of all Symptoms obtained from a file,
+	 *                       duplicates are possible/probable
 	 * @return a map of all Symptoms obtained from a List with no duplication
 	 *         classify by alphabetical order. Each symptom will be associated with
 	 *         a counter indicating the number of times it appears in the map.
 	 */
-	public Map<String, Integer> countSymptoms() {
-		return this.counter.countSymptoms(this.reader.getSymptoms());
+	public Map<String, Integer> countSymptoms(List<String> listNotCounted) {
+		return this.counter.countSymptoms(listNotCounted);
 	}
 
 	/**
 	 * Write the ordered list of Symptoms
+	 * 
+	 * @param mapCountedAndSorted a map of all Symptoms obtained from a List with no
+	 *                            duplication classify by alphabetical order. Each
+	 *                            symptom will be associated with a counter
+	 *                            indicating the number of times it appears in the
+	 *                            map.
 	 *
 	 */
-	public void writeSymptoms() {
-		this.writer.writeSymptoms(this.counter.countSymptoms(this.reader.getSymptoms()));
+	public void writeSymptoms(Map<String, Integer> mapCountedAndSorted) {
+		this.writer.writeSymptoms(mapCountedAndSorted);
 	}
 
 }

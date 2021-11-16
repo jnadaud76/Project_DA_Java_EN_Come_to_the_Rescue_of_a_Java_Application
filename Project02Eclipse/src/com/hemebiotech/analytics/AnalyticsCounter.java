@@ -1,5 +1,8 @@
 package com.hemebiotech.analytics;
 
+import java.util.List;
+import java.util.Map;
+
 import com.hemebiotech.analytics.analyse.Analyse;
 import com.hemebiotech.analytics.count.CountSymptomFromList;
 import com.hemebiotech.analytics.read.ReadSymptomDataFromFile;
@@ -22,7 +25,7 @@ import com.hemebiotech.analytics.write.WriteSymptomToFile;
  * @see WriteSymptomToFile#writeSymptoms
  * 
  * @author Johan Nadaud
- * @version 0.9
+ * @version 1.0
  *
  */
 public class AnalyticsCounter {
@@ -40,9 +43,9 @@ public class AnalyticsCounter {
 		Analyse analyse = new Analyse(new ReadSymptomDataFromFile(inputFile), new CountSymptomFromList(),
 				new WriteSymptomToFile(outputFile));
 
-		analyse.getSymptoms();
-		analyse.countSymptoms();
-		analyse.writeSymptoms();
+		List<String> listNotCounted = analyse.getSymptoms();
+		Map<String, Integer> mapCountedAndSorted = analyse.countSymptoms(listNotCounted);
+		analyse.writeSymptoms(mapCountedAndSorted);
 
 	}
 }
